@@ -16,18 +16,20 @@ jobs:
     - name: Copy files via SSH
       uses: appleboy/scp-action@master
       with:
-        host: ${{ secrets.HOSTINGER_HOST }}
-        username: ${{ secrets.HOSTINGER_USERNAME }}
+        host: 31.220.106.96
+        username: u583874119
         key: ${{ secrets.HOSTINGER_SSH_KEY }}
+        port: 65002
         source: "."
         target: "/home/u583874119/domains/proj1.techlab360.com"
 
     - name: Run deployment script via SSH
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.HOSTINGER_HOST }}
-        username: ${{ secrets.HOSTINGER_USERNAME }}
+        host: 31.220.106.96
+        username: u583874119
         key: ${{ secrets.HOSTINGER_SSH_KEY }}
+        port: 65002
         script: |
           cd /home/u583874119/domains/proj1.techlab360.com
           composer install --no-dev
