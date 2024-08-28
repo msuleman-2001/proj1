@@ -16,7 +16,7 @@ jobs:
     - name: Copy files via SSH
       uses: appleboy/scp-action@master
       with:
-        host: 31.220.106.96
+        host: proj1.techlab360.com
         username: u583874119
         key: ${{ secrets.HOSTINGER_SSH_KEY }}
         port: 65002
@@ -26,7 +26,7 @@ jobs:
     - name: Run deployment script via SSH
       uses: appleboy/ssh-action@master
       with:
-        host: 31.220.106.96
+        host: proj1.techlab360.com
         username: u583874119
         key: ${{ secrets.HOSTINGER_SSH_KEY }}
         port: 65002
